@@ -1,0 +1,72 @@
+/*Big tablet to big screen*/
+@media only screen and (max-width: 1200px) {
+    /* Do some stuff */
+}
+
+/*Small tablet to big tablet:  from 769px to 1024px*/
+@media only screen and (max-width: 1024px) {
+
+    .container {
+        width: 100%;
+        display: flex;
+        padding: 18px;
+    }
+    
+    h2 { font-size: 16.5px;}
+
+}
+
+/*Small phone to small tablet: from 481px to 768px*/
+@media only screen and (max-width: 768px) {
+    
+    .budget__title {
+    font-size: 16px;
+    }
+
+    .budget__value {
+    font-size: 40px;
+    }
+
+    .add__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .budget__income,
+    .budget__expenses {
+    padding: 8.5px;
+    }
+
+    .add__type,
+    .add__description,
+    .add__value{ height: 35px; }
+
+    .add__btn { font-size: 30px;}
+
+    .container {
+        width: 100%;
+        display: flex;
+        padding: 0 16px;
+    }
+
+    .income { margin-right: 16px;}
+
+    h2 { font-size: 14px; text-align: center;} 
+    
+    .item { padding: 8.5px 10px;}
+
+    .item__delete--btn { font-size: 18.5px; }
+
+    .total{ font-size: 15px; }
+
+    td{ font-size: 14px; }
+
+    th{ font-size: 17px; }
+}
+
+
+/*Small phones from 0 to 480px*/
+@media only screen and (max-width: 480px) {
+    /* Do some stuff */
+}

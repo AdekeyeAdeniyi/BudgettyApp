@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -19,7 +20,6 @@ body {
     font-family: Open Sans;
     font-size: 16px;
     position: relative;
-    height: 100vh;
     font-weight: 400;
 }
 
@@ -32,19 +32,26 @@ body {
 **********************************************/
 
 .top {
-    height: 40vh;
+    height: 40%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.35))), url(back.png);
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png);
     background-size: cover;
     background-position: center;
     position: relative;
+    padding: 12px 0;
 }
 
 .budget {
-    position: absolute;
-    width: 350px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+      display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 35%;
     color: #fff;
 }
 
@@ -59,7 +66,7 @@ body {
     font-weight: 300;
     font-size: 46px;
     text-align: center;
-    margin-bottom: 25px;
+/*    margin-bottom: 25px;*/
     letter-spacing: 2px;
 }
 
@@ -134,6 +141,7 @@ body {
     margin-right: 10px;
     font-weight: 300;
     border-radius: 5px;
+    -webkit-transition: border 0.3s;
     transition: border 0.3s;
 }
 
@@ -147,9 +155,9 @@ body {
     padding: 12px 15px;
     margin-right: 10px;
     border-radius: 5px;
+    -webkit-transition: border 0.3s;
     transition: border 0.3s;
 }
-
 .add__description { width: 400px;}
 .add__value { width: 100px;}
 
@@ -165,7 +173,7 @@ body {
     margin-left: 10px;
 }
 
-.add__btn:active { transform: translateY(2px); }
+.add__btn:active { -webkit-transform: translateY(2px); transform: translateY(2px); }
 
 .add__type:focus,
 .add__description:focus,
@@ -178,19 +186,24 @@ body {
 
 /***** LISTS *****/
 .container {
-    width: 1000px;
+    width: 90%;
     margin: 60px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 85px;
 }
 
 .income {
-    float: left;
-    width: 475px;
+    width: 100%;
     margin-right: 50px;
 }
 
 .expenses {
-    float: left;
-    width: 475px;
+    width: 100%;
 }
 
 h2 {
@@ -217,13 +230,19 @@ h2 {
 
 .item__value {
     float: left;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .item__percentage {
     float: left;
     margin-left: 20px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
     font-size: 11px;
     background-color: #FFDAD9;
     padding: 3px;
@@ -260,11 +279,11 @@ h2 {
 }
 
 .item__delete--btn:focus { outline: none; }
-.item__delete--btn:active { transform: translateY(2px); }
+.item__delete--btn:active { -webkit-transform: translateY(2px); transform: translateY(2px); }
 
 .item:hover .item__delete--btn { display: block; }
-.item:hover .item__value { transform: translateX(-20px); }
-.item:hover .item__percentage { transform: translateX(-20px); }
+.item:hover .item__value { -webkit-transform: translateX(-20px); transform: translateX(-20px); }
+.item:hover .item__percentage { -webkit-transform: translateX(-20px); transform: translateX(-20px); }
 
 
 .unpaid {
@@ -274,8 +293,15 @@ h2 {
 
 }
 
-.unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
+.unpaid .item__percentage { -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
 .unpaid:hover .item__description { font-weight: 900; }
+
+
+
+@-webkit-keyframes animationtop{
+    from{top: -300px; opacity: 0;}
+    to{top: 0; opacity: 1;}
+}
 
 
 
@@ -302,14 +328,22 @@ h2 {
     width: 75%;
     padding: 20px 40px;
     border: 1px solid #888;
+    -webkit-animation-name: animationtop;
     animation-name: animationtop;
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
 }
 
 .myModal__content--header{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 60px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -342,7 +376,11 @@ h2 {
 }
 
 .content--estimate{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
@@ -400,8 +438,14 @@ tr:nth-child(even){
 }
 
 .btnView{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: 0 auto;
     height: 45px;
@@ -418,6 +462,7 @@ tr:nth-child(even){
 .btnView:hover{
    background-color: transparent;
    color: #FF5049;
+   -webkit-transition: background 0.6s, border 0.6s;
    transition: background 0.6s, border 0.6s;
    font-size: 16px;
 }
